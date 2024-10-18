@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('') no-repeat center center fixed; 
+    background-size: cover;
+    color: #fff; 
+}
+
+.container {
+    position: relative; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.weather-block {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(224, 247, 250, 0.8); 
+    padding: 15px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.city {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.city-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.city-button:hover {
+    background-color: #0056b3;
+}
+
+
+.wallpaper {
+    margin-bottom: 20px;
+    height: 200px;
+    background-color: #e0e0e0; /* Замена на изображение для слайдера */
+    border-radius: 5px;
+}
+
+.date-time-block {
+    text-align: center;
+    margin: auto; 
+    color: black;
+}
+
+.tasks-block {
+    position: absolute;
+    right: 20px;
+    top: 100px; 
+    background-color: rgba(255, 224, 178, 0.8); 
+    padding: 15px;
+    border-radius: 5px;
+    width: 200px; 
+}
+
+.tasks-block ul {
+    list-style-type: none;
+}
+
+.tasks-block li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.tasks-block li:last-child {
+    border-bottom: none;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8d8b8a;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 100;
+    transition: opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; 
+    }
+
+    .city {
+        font-size: 1.4em;
+    }
+
+    .city-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    .weather-block {
+        margin-bottom: 15px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .city {
+        font-size: 1.2em;
+    }
+
+    .city-button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .weather-block, .tasks-block {
+        padding: 10px;
+    }
+
+    .tasks-block li {
+        padding: 8px 0;
+    }
+
+    .notification {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .wallpaper {
+        height: 150px; 
+    }
+}
+
+@media (max-width: 400px) {
+    .city {
+        font-size: 1.1em;
+    }
+
+    .city-button {
+        width: 100%; 
+    }
+
+    .weather-block, .tasks-block {
+        padding: 8px;
+    }
+
+    .notification {
+        width: 90%; 
+    }
+}
