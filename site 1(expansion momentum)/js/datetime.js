@@ -24,6 +24,7 @@ function updateTime(timezone) {
 		.then(data => {
 			document.querySelector('.time').textContent = formatTime(data);
 			document.querySelector('.date').textContent = formatDate(data);
+			updateWallpaper();
 		})
 		.catch(error => {
 			console.error('Ошибка при получении текущего времени:', error);

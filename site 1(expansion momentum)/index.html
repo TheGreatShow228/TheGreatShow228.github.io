@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="ru" class="js" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <meta charset="utf-8" />
+        <title>expansion momentum</title>
+        <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="wallpaper">
+        <div class="container">
+                <div>
+                        <div class="weather-block">
+                                <div class="city-container">
+                                        <div class="city"></div>    
+                                        <button class="city-button" onclick="getLocation()">Указать город</button>
+                                </div>
+                                <span class="temperature"></span>
+                                <span class="weather"></span>
+                                <span class="precipitation"></span>
+                                <span class="wind">
+                                        <span class="windSpeed"></span>
+                                </span>
+                        </div>
+                        <div class="time-date-block">
+                                <div class="time"></div> 
+                                <div class="date"></div>
+                        </div>
+                        <div class="tasks-block">
+                                <div class="task-input-container" style="display: none;">
+                                        <input type="text" class="task-input" placeholder="Новая задача">
+                                </div>
+                                <ul class="task-list"></ul>
+                        </div>
+                </div>
+        </div>
+        <div class="notification" id="notification" style="display: none;"></div>
+        <script src="js/init.js"></script>
+        <script src="js/weather.js"></script>
+        <script src="js/datetime.js"></script>
+        <script src="js/tasks.js"></script>
+</body>
+</html>
