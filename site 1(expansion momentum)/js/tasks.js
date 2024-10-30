@@ -1,6 +1,5 @@
 let tasks = [];
 
-// Функция для создания элемента задачи
 function createTaskElement(task, index) {
     const taskItem = document.createElement('li');
     taskItem.classList.toggle('tasks-completed', task.completed);
@@ -27,7 +26,8 @@ function createTaskElement(task, index) {
     editInput.style.display = 'none';
 
     const editButton = document.createElement('button');
-    editButton.textContent = 'Редактировать';
+    editButton.innerHTML ='<img src="img/icon 06.png" class="edit-icon task-icon" alt="редактировать" >';
+    editButton.classList.add('edit-button');
     editButton.addEventListener('click', () => {
         if (editInput.style.display === 'none') {
             editInput.style.display = 'inline';
@@ -46,14 +46,15 @@ function createTaskElement(task, index) {
     });
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Удалить';
+    deleteButton.innerHTML = '<img src="img/icon 07.png" class="delete-icon task-icon" alt="удалить" >';
+    deleteButton.classList.add('delete-button');
     deleteButton.addEventListener('click', () => {
         taskItem.remove();
         tasks.splice(index, 1);
         saveAllTasks();
     });
 
-    taskItem.append(editInput, editButton, deleteButton);
+    taskItem.append(checkbox, editInput, taskText, editButton, deleteButton);
     return taskItem;
 }
 
@@ -70,7 +71,6 @@ function loadTasks() {
     renderTasks();
 }
 
-// Функция для отображения задач
 function renderTasks() {
     const taskList = document.querySelector('.task-list');
     taskList.innerHTML = '';
@@ -80,7 +80,6 @@ function renderTasks() {
     });
 }
 
-// Функция для добавления новой задачи
 function addNewTask() {
     const taskInput = document.querySelector('.task-input');
     const taskName = taskInput.value.trim();
@@ -97,7 +96,6 @@ function addNewTask() {
     saveAllTasks();
 }
 
-// Обработчик события после загрузки страницы
 document.addEventListener('DOMContentLoaded', () => {
     loadTasks();
 

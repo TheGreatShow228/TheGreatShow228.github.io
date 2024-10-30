@@ -50,19 +50,25 @@ function updateWeather(data) {
 	const weatherCode = data.hourly.weathercode[0];
 	const windSpeed = data.hourly.windspeed_10m[0];
 
-	document.querySelector('.temperature').textContent = `Температура: ${temperature}°`;
+	document.querySelector(
+		'.temperature'
+	).innerHTML = `<img src="img/icon 02.png" alt="Температура" class="icon weather-icon"> ${temperature}°`
 
 	const weatherForecast = weatherCondition[weatherCode];
 	if (weatherForecast) {
-		document.querySelector('.weather').textContent = `Погода: ${weatherForecast}`
+		document.querySelector(
+			'.weather'
+		).innerHTML = `<img src="img/icon 03.png" alt="Погода" class="icon weather-icon"> ${weatherForecast}`
 	}
 	if (precipitation > 0.5) {
-		document.querySelector('.precipitation').textContent = `Осадки: ${precipitation} мм`;
+		document.querySelector('.precipitation').innerHTML = `<img src="img/icon 04.png" alt="Осадки" class="icon weather-icon"> ${precipitation} мм`;
 	} else {
 		document.querySelector('.precipitation').textContent = '';
 	}
 	if (windSpeed >= 1.5) {
-		document.querySelector('.windSpeed').textContent = `Ветер: ${windSpeed} м/с`;
+		document.querySelector(
+			'.windSpeed'
+		).innerHTML = `<img src="img/icon 05.png" alt="Ветер" class="icon weather-icon"> ${windSpeed} м/с`
 	} else {
 		document.querySelector('.windSpeed').textContent = '';
 	}
@@ -97,5 +103,5 @@ function showError(error) {
 
 	setTimeout(() => {
 		notification.style.display = 'none';
-	}, 4000)
+	}, 2000)
 }

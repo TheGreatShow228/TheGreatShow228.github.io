@@ -5,9 +5,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: url('') no-repeat center center fixed; 
-    background-size: cover;
+    font-family: 'Poppins', sans-serif; 
+    background: linear-gradient(to bottom right, #4a90e2, #e94e77);
     color: #fff; 
 }
 
@@ -15,72 +14,90 @@ button {
     padding: 5px 10px; 
     margin-left: 5px; 
     border: none; 
+    display: flex;
+    align-items: center;
     border-radius: 4px;
     cursor: pointer; 
     transition: background-color 0.3s; 
 }
 
-button:nth-of-type(2) {
-    background-color: #4CAF50;
-    color: white; 
-}
-
-button:nth-of-type(2):hover {
-    background-color: #45a049; 
-}
-
-button:nth-of-type(3) {
-    background-color: #f44336; 
-    color: white; 
-}
-
-button:nth-of-type(3):hover {
-    background-color: #e53935; 
-}
 
 .container {
-    position: relative; 
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
 }
 
 .weather-block {
     position: absolute;
     top: 20px;
-    right: 20px;
-    background-color: rgba(224, 247, 250, 0.8); 
-    padding: 15px;
-    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(206 237 255 / 0.8);
+    padding: 20px;
+    border-radius: 10px;
     color: rgb(0, 0, 0);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px; 
+    display: flex;
+    flex-direction: column;
 }
 
-.city {
-    font-size: 1.5em;
+.weather-block span {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
 }
 
+.weather-block img {
+    margin-right: 4px; 
+}
+
+.weather-info {
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.city {
+    font-size: 1.7em;
+    margin-bottom: 10px;
+    font-family: "Rubik Mono One", monospace;
+}
+
+.city-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .city-button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
+    background-color: #57e0c5;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%; 
     cursor: pointer;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center; 
+    padding: 3px 2px 3px 2px;
+    margin: -12px 0px 0px 6px;
 }
 
 .city-button:hover {
-    background-color: #0056b3;
+    background-color: #48bca5;
 }
 
-
-
-.wallpaper {
-    width: 100%;
-    height: 100vh;
-    background-position: center;
-    position: relative; 
-    transition: background-image 0.5s ease;
+.city-button img {
+    width: 24px;
+    height: auto;
+    left: 2px;
+    bottom: 1px;
+    position: relative;
 }
 
 .time-date-block {
@@ -94,50 +111,130 @@ button:nth-of-type(3):hover {
     height: 100vh;
 }
 
+.time, .date {
+    text-shadow: 0px 0px 0 rgb(255 255 255 / 100%), 2px 2px 0 rgb(171 171 171 / 26%), 3px 3px 0 rgb(0 0 0);
+}
+
 .time {
     font-size: 140px;
 }
 
+.date {
+    font-size: 28px;
+    bottom: 40px;
+    position: relative;
+}
+
 .tasks-block {
     position: absolute;
-    right: 20px;
-    top: 500px; 
-    background-color: rgba(255, 224, 178, 0.8); 
-    padding: 15px;
-    border-radius: 5px;
-    width: 200px; 
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: rgba(255, 232, 197, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px; 
 }
 
 .tasks-block ul {
     list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .tasks-block li {
-    padding: 5px 0;
-    border-bottom: 1px solid #ccc;
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    color: #8f8558;
+    padding: 10px 0;
+    border-bottom: 1px solid #aa9e6a;
+    position: relative;
+    height: auto; 
+    transition: none;
+}
+
+.tasks-block li span {
+    flex: 1; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    word-break: break-word; 
+    white-space: normal; 
 }
 
 .tasks-block li:last-child {
     border-bottom: none;
 }
 
+.tasks-block li input[type="checkbox"] {
+    appearance: none;
+    width: 16px; 
+    height: 16px; 
+    border: 2px solid #8a7e3c; 
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    margin-right: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.tasks-block li input[type="checkbox"]:checked {
+    background-color: #958b52;
+    border-color: #aa9e6a;
+}
+
+.tasks-block li input[type="checkbox"]:checked::before {
+    content: "✔";
+    color: #724c1a; 
+    display: block; 
+    text-align: center; 
+    position: relative;
+    bottom: 3px;
+    left: 1px;
+}
+
+.tasks-block li:hover .edit-button,
+.tasks-block li:hover .delete-button {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.task-icon {
+    width: 20px;
+    height: auto;
+}
+
+.edit-button, .delete-button {
+    opacity: 0;
+    visibility: hidden;
+    padding: 2px 1px;
+    margin-left: 6px;
+    position: relative;
+    left: 4px;
+    transition: opacity 0.5s ease, visibility 0s linear 0.3s; 
+    background-color: transparent; 
+}
+
 .tasks-completed {
     text-decoration: line-through; 
-    color: gray;
+    color: #312d1a;
 }
 
 .task-input {
-    border: 2px solid #007bff; 
+    border: none;
     padding: 10px;
     border-radius: 5px;
-    width: 100%; 
-    transition: border-color 0.3s;
-    background-color: #f8f9fa;
-    color: #333; 
+    width: 100%;
+    background-color: #b5a76c7a;
+    color: #000000;
 }
 
 .task-input:focus {
-    border-color: #0056b3; 
     outline: none;
 }
 
@@ -155,6 +252,46 @@ button:nth-of-type(3):hover {
     transition: opacity 0.3s;
 }
 
+@media (max-width: 1920px) {
+    .time {
+        font-size: 160px;
+    }
+    .date {
+        bottom: 30px;
+        position: relative;
+    }
+    .weather-block, .tasks-block {
+        max-width: 600px; 
+    }
+}
+
+@media (max-width: 1600px) {
+    .time {
+        font-size: 140px;
+    }
+    .weather-block, .tasks-block {
+        width: 60%; 
+    }
+}
+
+@media (max-width: 1280px) {
+    .time {
+        font-size: 120px;
+    }
+    .weather-block, .tasks-block {
+        width: 70%; 
+    }
+}
+
+@media (max-width: 1024px) {
+    .time {
+        font-size: 100px;
+    }
+    .weather-block, .tasks-block {
+        width: 80%; 
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         max-width: 90%; 
@@ -164,13 +301,10 @@ button:nth-of-type(3):hover {
         font-size: 1.4em;
     }
 
-    .city-button {
-        padding: 10px 15px;
-        font-size: 1em;
-    }
-
-    .weather-block {
-        margin-bottom: 15px; 
+    .weather-block, .tasks-block {
+        width: 400px;
+      padding: 15px;
+        font-size: 0.9em;  
     }
 }
 
@@ -183,13 +317,9 @@ button:nth-of-type(3):hover {
         font-size: 1.2em;
     }
 
-    .city-button {
-        padding: 8px 12px;
-        font-size: 0.9em;
-    }
-
     .weather-block, .tasks-block {
         padding: 10px;
+        font-size: 0.8em;
     }
 
     .tasks-block li {
@@ -210,19 +340,42 @@ button:nth-of-type(3):hover {
     }
 }
 
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .city {
+        font-size: 1.2em;
+    }
+
+    .time {
+        font-size: 80px;
+    }
+
+    .weather-block, .tasks-block {
+        padding: 8px;
+        font-size: 0.75em; 
+    }
+}
+
 @media (max-width: 450px) {
     .time {
         font-size: 70px;
+    }
+    .date {
+        font-size: 20px;
+        bottom: 20px;
+        position: relative;
+    }
+    .weather-block, .tasks-block {
+        width: 100%; 
     }
 }
 
 @media (max-width: 400px) {
     .city {
         font-size: 1.1em;
-    }
-
-    .city-button {
-        width: 100%; 
     }
 
     .weather-block, .tasks-block {
@@ -232,11 +385,41 @@ button:nth-of-type(3):hover {
     .notification {
         width: 90%; 
     }
+    .weather-block, .tasks-block {
+        font-size: 0.7em; 
+    }
+}
 
+@media (max-width: 320px) {
+    .time {
+        font-size: 60px;
+    }
+
+    .date {
+        font-size: 16px;
+    }
+
+    .city {
+        font-size: 1.1em;
+    }
+
+    .notification {
+        width: 90%; 
+    }
+
+    .weather-block, .tasks-block {
+        padding: 5px;
+        font-size: 0.6em; 
+    }
 }
 
 @media (max-width: 300px) {
     .time {
         font-size: 30px;
+    }
+
+    .date {
+        bottom: 10px;
+        position: relative;
     }
 }
