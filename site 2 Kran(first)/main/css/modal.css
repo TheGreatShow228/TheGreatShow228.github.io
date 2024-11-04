@@ -1,0 +1,110 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: none; 
+    z-index: 1000;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; 
+    z-index: 1000;
+}
+
+input[type=email], input[type=password], input[type=text], input[type=tel] {
+    padding: 16px 32px 16px 32px;
+    border-radius: 200px;
+    border: 1px solid #E0E0E0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+}
+
+    input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, input[type=tel]:focus {
+        background: #fcfcfc;
+        outline: none;
+    }
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 39.84px;
+    text-align: left;
+    margin: 42px 0px 30px 60px;
+}
+
+.personal-data {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: left;
+    width: 289px;
+    height: 40px;
+    top: 359px;
+    left: 190px;
+}
+
+.personal-data_link {
+    text-decoration: none;
+    color: #56CCF2;
+}
+
+.close-button {
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-button {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-link {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.form-link.active {
+    color: #56CCF2; 
+}
+
+.form-link:not(.active) {
+    text-decoration: dotted;
+}
+
+.submit-button {
+    background-color: #56CCF2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #45B3E0;
+}
