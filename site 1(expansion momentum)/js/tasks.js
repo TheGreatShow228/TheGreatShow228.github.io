@@ -25,6 +25,19 @@ function createTaskElement(task, index) {
     editInput.value = task.name;
     editInput.style.display = 'none';
 
+    editInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        const newTaskName = editInput.value.trim();
+        if (newTaskName) {
+            task.name = newTaskName;
+            taskText.textContent = task.name;
+            editInput.style.display = 'none';
+            taskText.style.display = 'inline';
+            saveAllTasks();
+        }
+    }
+});
+
     const editButton = document.createElement('button');
     editButton.innerHTML ='<img src="img/icon 06.png" class="edit-icon task-icon" alt="редактировать" >';
     editButton.classList.add('edit-button');
