@@ -1,0 +1,180 @@
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>main</title>
+    <link rel="stylesheet" href="css\styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+<body class="html front">
+<div class="wrapper">
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img class="logo_img" src="img\logo.svg" alt="Изображение логотипа">
+            </div>
+            <div class="header_menu">
+                <nav class="menu">
+                    <ul class="menu_list">
+                        <li class="menu_item">
+                           <div class="menu_link_up">МЕНЮ</div>
+                            <ul class="menu_list-open menu_list-hidden">
+                                <img class="close_img close_img-hidden" src="img\close.svg" alt="Изображение закрытия меню">
+                                <li>
+                                    <a href="#" class="menu_link_up-open" tabindex="-1">УСЛУГИ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu_link_up-open" tabindex="-1">СТАТЬИ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu_link_up-open" tabindex="-1">ВАКАНСИИ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu_link_up-open" tabindex="-1">ФРАНШИЗА</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#" class="menu_link_up">ПОРТФОЛИО</a>
+                        </li>
+                        <li class="menu_item">
+                            <div class="menu_link_up menu_link_up-price">ЦЕНЫ</div>
+                            <div class="menu_list-open-price menu_list-hidden-price">
+                                <img class="close_img-price close_img-hidden-price" src="img\close.svg" alt="Изображение закрытия меню">
+                                <label for="message">введите артикул</label>
+                                <textarea class="input-text" id="message" rows="10" cols="45" name="text"></textarea>
+                                <input class="input-submit" type="submit">
+                            </div>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#" class="menu_link_up menu_link_up-long">СХЕМА РАБОТЫ</a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#" class="menu_link_up">ОТЗЫВЫ</a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#" class="menu_link_up">КОНТАКТЫ</a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#" class="menu_link_up">ГАРАНТИЯ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <button type="submit" class="header_back-call back-call button" value="submit">
+                <a href="" class="header_button button">ОБРАТНЫЙ ЗВОНОК</a>
+            </button>
+        </header>
+    </div>
+    <div class="container">
+        <main class="main">
+            <article class="container">
+                <section class="section">
+                    <div>
+                        <h1 class="main_heading animated_left-1">Ремонт под ключ от 2900 руб/м².</h1>
+                        <div class="main_description animated_left-2">
+                            <p class="main_description_text">При заказе ремонта делаем дизайн-проект в подарок</p>
+                            <img class="main_description_img" src="img\Rectangle.svg" alt="Изображение акцента">
+                        </div>
+                    </div>
+                    <div class="main_services">
+                        <ul class="main_list animated_left-3">
+                            <li class="main_item">
+                                <img class="main_item_img" src="img\checked truck.svg" alt="Изображение иконки">
+                                <p class="main_paragraph">Бесплатный выезд в день обращения</p>
+                            </li>
+                            <li class="main_item">
+                                <img class="main_item_img" src="img\guarantee.svg" alt="Изображение иконки">
+                                <p class="main_paragraph">Гарантия на работу до 5 лет</p>
+                            </li>
+                            <li class="main_item">
+                                <img class="main_item_img" src="img\time_management.svg" alt="Изображение иконки">
+                                <p class="main_paragraph">Жесткое соблюдение сроков</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <div class="scroll">
+                    <img class="scroll_img" src="img\arrow down.svg" alt="Изображение Скролла">
+                    <div class="scroll_text">SCROLL</div>
+                </div>
+                <div class="out"></div>
+                <aside class="container">
+                    <div class="calculation animated_right-1">
+                        <div class="calculation_heading">Рассчитайте стоимость ремонта</div>
+                        <div class="block_input">
+                            <div class="input_heading">ПЛОЩАДЬ КВАРТИРЫ:
+                                <div class="block_value">
+                                    <span class="range_value" id="value"></span>м²
+                                </div>
+                                <div class="block_range">
+                                    <input type="range" class="area_apartments range" min="25" max="120" value="68" step="1" onchange="change();" id="range">
+                                </div>
+                            </div>
+                            <div class="input_heading">ТИП ЖИЛЬЯ:
+                                <div class="radio">
+                                    <label for="radio_apartments-1" class="label-radio">
+                                        <input class="input-value" type="radio" name="value_up" value="Вторичное жилье" id="radio_apartments-1" checked="checked">
+                                        <span class="custom_radio custom_radio-long">Вторичное <br> жилье</span>
+                                        <span class="radio_img"></span>
+                                    </label>
+                                    <label for="radio_apartments-2" class="label-radio">
+                                        <input class="input-value" type="radio" name="value_up" value="Новостройка" id="radio_apartments-2">
+                                        <span class="custom_radio custom_radio-new">Новостройка</span>
+                                        <span class="radio_img"></span>
+                                    </label>
+                                    <label for="radio_apartments-3" class="label-radio">
+                                        <input class="input-value" type="radio" name="value_up" value="Офис" id="radio_apartments-3">
+                                        <span class="custom_radio custom_radio-new">Офис</span>
+                                        <span class="radio_img"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="input_heading input_heading-rooms">КОЛ-ВО КОМНАТ:
+                                <div class="radio">
+                                    <label for="radio_rooms-1" class="label-radio">
+                                        <input class="input-value" type="radio" name="value_down" value="1" id="radio_rooms-1" checked="checked">
+                                        <span class="custom_radio custom_radio-new">1</span>
+                                        <span class="radio_img"></span>
+                                    </label>
+                                    <label for="radio_rooms-2" class="label-radio">
+                                        <input class="input-value" type="radio" name="value_down" value="2" id="radio_rooms-2">
+                                        <span class="custom_radio custom_radio-new">2</span>
+                                        <span class="radio_img"></span>
+                                    </label>
+                                    <label for="radio_rooms-3" class="label-radio">
+                                        <input class="input-value" type="radio" name="value_down" value="3+" id="radio_rooms-3">
+                                        <span class="custom_radio custom_radio-new">3+</span>
+                                        <span class="radio_img"></span>
+                                    </label>
+                                    <label for="radio_rooms-4" class="label-radio">
+                                        <input class="input-value" type="radio" name="value_down" value="Студия" id="radio_rooms-4">
+                                        <span class="custom_radio custom_radio-new">Студия</span>
+                                        <span class="radio_img"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="main_back-call back-call button" value="submit">
+                            <a href="" class="header_button button">ОТПРАВИТЬ</a>
+                        </button>
+                    </div>
+                    <div class="main_img" id="main_img">
+                        <img class="main_picture scrolling animated_right-2" src="img\side image.svg" alt="Основное изображение">
+                    </div>
+                </aside>
+            </article>
+        </main>
+    </div>
+    <footer class="footer container">
+    </footer>
+</div>
+<script src="js/script.js"></script>
+<script src="js/range.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/scroll.js"></script>
+</body>
+</html>
