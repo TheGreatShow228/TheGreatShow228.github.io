@@ -1,34 +1,21 @@
-document.querySelector('.input-submit').onclick = Click;
+$(document).ready(function() {
+    $('#submit-button').on('click', function() {
+        let article = $('#message').val().trim();
 
-function Click() {
-    let a = document.querySelector('.input-text').value;
-    console.log(a);
-    document.querySelector('out').innerHTML = a;
-}
-
-let objXMLHttpRequest = new XMLHttpRequest();
-objXMLHttpRequest.onreadystatechange = function () {
-    if (objXMLHttpRequest.readyState === 4) {
-        if (objXMLHttpRequest.status === 200) {
-            alert(objXMLHttpRequest.responseText);
+        if (article !== '') {
+            $.ajax({
+                url: 'ajax-script.php',
+                method: 'POST',
+                data: { article: article },
+                success: function(response) {
+                    $('#messageResponse').html(response);
+                },
+                error: function() {
+                    $('#messageResponse').html('<p>Ошибка запроса. Попробуйте снова.</p>');
+                }
+            });
         } else {
-            alert('Error Code: ' + objXMLHttpRequest.status);
-            alert('Error Message: ' + objXMLHttpRequest.statusText);
+            $('#messageResponse').html('<p>Пожалуйста, введите артикул.</p>');
         }
-    }
-}
-objXMLHttpRequest.open('GET', 'request_ajax_data.php');
-objXMLHttpRequest.send();
-
-    $.ajax(
-    'request_ajax_data.php',
-    {
-        success: function(data) {
-        alert('AJAX call was successful!');
-        alert('Data from the server' + data);
-    },
-        error: function() {
-        alert('There was some error performing the AJAX call!');
-    }
-    }
-    );
+    });
+});

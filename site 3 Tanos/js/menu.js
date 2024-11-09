@@ -12,14 +12,6 @@ document.querySelector(".close_img").addEventListener("click", function (){
     document.querySelector(".menu_list-open" ).classList.toggle("menu_list-hidden");
 })
 
-
-
-
-
-
-
-
-
 document.querySelector(".menu_link_up-price").addEventListener("click", function (){
     document.querySelector(".menu_list-open-price" ).classList.toggle("menu_list-hidden-price");
 })

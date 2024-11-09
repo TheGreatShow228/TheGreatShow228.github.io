@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('wheel', (event) => {
         event.preventDefault();
-
-        scrollX -= event.deltaY;
-
-        image.style.transform = `translateX(${scrollX}px)`;
+        if (event.deltaY !== 0) {
+            scrollX -= event.deltaY;
+            image.style.transform = `translateX(${scrollX}px)`;
+        }
     }, { passive: false });
-})
-
-
+});
