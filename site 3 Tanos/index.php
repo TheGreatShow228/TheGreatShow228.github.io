@@ -21,19 +21,17 @@
                 type: "POST",
                 url: 'login.php',
                 data: $(this).serialize(),
-                success: function(response)
-                {
-                    var jsonData = JSON.parse(response);
-                    // user is logged in successfully in the back-end
-                    // let's redirect
-                    if (jsonData.success == "1")
-                    {
-                        location.href = 'my_profile.php';
+                success: function(response) {
+                    let jsonData = JSON.parse(response);
+
+                    if (jsonData.success == "1") {
+                        window.location.href = jsonData.redirect; // Переход на страницу index.html
+                    } else {
+                        alert(jsonData.message || 'Неверный логин или пароль'); // Показать ошибку
                     }
-                    else
-                    {
-                        alert('Invalid Credentials!');
-                    }
+                },
+                error: function() {
+                    alert('Ошибка при отправке данных');
                 }
             });
         });
